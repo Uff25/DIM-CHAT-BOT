@@ -3,9 +3,9 @@ const fs = require("fs-extra");
 const path = require("path");
 
 const gifUrls = [
-  "https://i.imgur.com/4FUSn8C.gif",
-  "https://i.imgur.com/N3JxhT8.gif",
-  "https://i.imgur.com/rOTsKJd.gif"
+  "https://i.imgur.com/W4lBm3J.jpeg",
+  "https://i.imgur.com/W4lBm3J.jpeg",
+  "https://i.imgur.com/W4lBm3J.jpeg"
 ];
 
 module.exports = {
@@ -73,7 +73,7 @@ module.exports = {
 
         api.sendMessage(
           {
-            body: "🫵তোর আব্বু লাগে 👑𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑",
+            body: "🫵𝐎𝐖𝐍𝐄𝐑 👑𝆠፝𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑",
             attachment: fs.createReadStream(filePath)
           },
           event.threadID,
