@@ -1,74 +1,79 @@
-const DIG = require("discord-image-generation");
-const axios = require('axios');
-const fs = require("fs");
-const os = require("os");
-const path = require("path");
+const axios = require("axios");
+const { createCanvas, loadImage } = require("canvas");
+const fs = require("fs-extra");
 
 module.exports = {
   config: {
     name: "gay",
-    aliases: ["gay"],
-    version: "1.2",
-    author: "𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍",
-    countDown: 5,
+    version: "3.1",
+    author: "Siam Ahmed Saan",
+    countDown: 8,
     role: 0,
-    shortDescription: "rainbowify someone's avatar",
-    longDescription: "",
-    category: "fun",
-    guide: "{pn} [@mention]"
+    shortDescription: "Gay canvas with fixed syntax",
+    longDescription: "Places PFPs on background with fixed destructuring and blacklist.",
+    category: "FUN & SOCIAL",
+    guide: "{pn} @tag | {pn} [reply]"
   },
 
-  onStart: async function ({ message, event, args }) {
+  onStart: async function ({ api, event, args, usersData }) {
+
+    const { threadID, messageID, senderID, mentions, type, messageReply } = event; 
+    
+    let targetID;
+    if (type === "message_reply") {
+      targetID = messageReply.senderID;
+    } else if (Object.keys(mentions).length > 0) {
+      targetID = Object.keys(mentions)[0];
+    } else {
+      return api.sendMessage("❌ Please mention someone or reply to their message to use this command!", threadID, messageID);
+    }
+
+    const blacklistedID = "61570641868681";
+    if (targetID == blacklistedID) {
+      return api.sendMessage("❌ Ei user er upor ei command kaj korbe na!", threadID, messageID);
+    }
+
     try {
-      const mentions = Object.keys(event.mentions);
-      const senderID = event.senderID;
+      api.sendMessage("Processing...", threadID, messageID);
 
-      const targetID = event.type === "message_reply"
-        ? event.messageReply.senderID
-        : mentions.length > 0
-          ? mentions[0]
-          : senderID;
+      const backgroundURL = "https://i.ibb.co/Ld1J2cx6/598832374d5c.png";
+      const senderPFPURL = `https://graph.facebook.com/${senderID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
+      const targetPFPURL = `https://graph.facebook.com/${targetID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
 
-      const pth = await makeGay(targetID);
+      const [bgImg, senderPFP, targetPFP] = await Promise.all([
+        loadImage(backgroundURL),
+        loadImage(senderPFPURL),
+        loadImage(targetPFPURL)
+      ]);
 
-      const responseMsg = 
-`» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
-───────────────
-» 🏳️‍🌈 𝐇𝐞𝐲 𝐥𝐨𝐨𝐤 𝐚𝐭 𝐭𝐡𝐢𝐬 𝐚𝐯𝐚𝐭𝐚𝐫!
-───────────────
-» 🧚‍♀️ ‿𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+      const canvas = createCanvas(bgImg.width, bgImg.height);
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
 
-      await message.reply({
-        body: responseMsg,
-        attachment: fs.createReadStream(pth)
-      });
+      const drawCirclePFP = (img, x, y, size) => {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(x + size / 2, y + size / 2, size / 2, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, x, y, size, size);
+        ctx.restore();
+      };
 
-      try { fs.unlinkSync(pth); } catch (e) { /* ignore */ }
+      drawCirclePFP(senderPFP, 400, 170, 60); 
+      drawCirclePFP(targetPFP, 210, 180, 60);
+
+      const path = __dirname + `/cache/gay_${senderID}.png`;
+      fs.writeFileSync(path, canvas.toBuffer("image/png"));
+
+      return api.sendMessage({
+        body: `🌈 Gay user ${await usersData.getName(targetID)}!`,
+        attachment: fs.createReadStream(path)
+      }, threadID, () => fs.unlinkSync(path), messageID);
+
     } catch (e) {
       console.error(e);
-      const errorMsg = 
-`» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
-───────────────
-» ❌ 𝐄𝐫𝐫𝐨𝐫: 𝐈𝐦𝐚𝐠𝐞 𝐠𝐞𝐧𝐞𝐫𝐚𝐭𝐞
-» ⚠️ 𝐤𝐨𝐫𝐚 𝐬𝐨𝐦𝐯𝐨𝐛 𝐡𝐨𝐲𝐧𝐢.
-───────────────
-» 🧚‍♀️ ‿𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
-      return message.reply(errorMsg);
+      return api.sendMessage("❌ Error: Image generate kora somvob hoyni.", threadID, messageID);
     }
   }
 };
-
-async function getAvatarBuffer(uid) {
-  const url = `https://graph.facebook.com/${uid}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
-  const response = await axios.get(url, { responseType: 'arraybuffer' });
-  return Buffer.from(response.data, 'binary');
-}
-
-async function makeGay(uid) {
-  const avatar = await getAvatarBuffer(uid);
-  const img = await new DIG.Gay().getImage(avatar);
-  const tmpDir = os.tmpdir();
-  const pth = path.join(tmpDir, `gay_${Date.now()}_${Math.floor(Math.random()*10000)}.png`);
-  fs.writeFileSync(pth, img);
-  return pth;
-}
