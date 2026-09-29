@@ -12,8 +12,8 @@ module.exports = {
   },
 
   onStart: async function ({ message }) {
-    const botName = "𝐍𝐈𝐉𝐇𝐔𝐌";
-    const prefix = global.GoatBot?.config?.prefix || ".";
+    const botName = "𝐀𝐑𝐈𝐘𝐀𝐍 𝐂𝐇𝐀𝐓 𝐁𝐎𝐓";
+    const prefix = global.GoatBot?.config?.prefix || "!";
     const commands = global.GoatBot?.commands?.size || 200;
 
     const now = moment().tz("Asia/Dhaka");
@@ -27,8 +27,8 @@ module.exports = {
 
     
     const links = [
-      "https://files.catbox.moe/7siyec.jpg",
-      "https://files.catbox.moe/zz241j.jpg"
+      "https://files.catbox.moe/nd3nk5.mp4",
+      "https://files.catbox.moe/462c6q.webm"
     ];
 
     /* ✅ TOGGLE SYSTEM WITH UNIVERSAL FORMAT HANDLER */
@@ -58,54 +58,60 @@ module.exports = {
 
     return message.reply({
       body: `╔═══════════════╗
-  ‿👑𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
+   👑 ARIYAN SABBIR 👑
 ╚═══════════════╝
-╭〔 🤖 ‿𝐁𝐎𝐓 𝐏𝐀𝐍𝐄𝐋 〕╮
-│ 🤖 ‿𝐁𝐎𝐓 𝐍𝐀𝐌𝐄 ➤ ${botName}
-│ ⚡ ‿𝐏𝐑𝐄𝐅𝐈𝐗 ➤ ${prefix}
-│ 📦 ‿𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ➤ ${commands}
+
+╭〔 🤖 BOT PANEL 〕╮
+│ 🤖 BOT NAME ➤ ARIYAN CHAT BOT
+│ ⚡ PREFIX ➤ ${prefix}
+│ 📦 COMMANDS ➤ ${commands}
 ╰────────────────╯
-╭〔 👤 ‿𝐎𝐖𝐍𝐄𝐑 𝐈𝐍𝐅𝐎 〕╮
-│ 👑 ‿𝐍𝐀𝐌𝐄 ➤ 𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
-│ 🎂 ‿𝐀𝐆𝐄 ➤ 𝟏𝟕+ | 🚹 𝐆𝐄𝐍𝐃𝐄𝐑 ➤ 𝐌𝐀𝐋𝐄
-│ 📘 ‿𝐒𝐓𝐔𝐃𝐘 ➤ 𝐂𝐋𝐀𝐒𝐒 𝟏𝟎
-│ 💔 ‿𝐒𝐓𝐀𝐓𝐔𝐒 ➤ 𝐒𝐈𝐍𝐆𝐋𝐄
-╰─────────────────
-╭〔 📍 ‿𝐋𝐎𝐂𝐀𝐓𝐈𝐎𝐍 〕╮
-│ 🏠 ‿𝐃𝐈𝐒𝐓𝐑𝐈𝐂𝐓 ➤ 𝐊𝐈𝐒𝐇𝐎𝐑𝐄𝐆𝐀𝐍𝐉
-│ 🌍 ‿𝐂𝐎𝐔𝐍𝐓𝐑𝐘 ➤ 𝐁𝐀𝐍𝐆𝐋𝐀𝐃𝐄𝐒𝐇
+
+╭〔 👤 OWNER INFO 〕╮
+│ 👑 NAME ➤ ARIYAN SABBIR
+│ 🎂 AGE ➤ 19+
+│ 🚻 GENDER ➤ MALE
+│ 🕋 RELIGION ➤ ISLAM
+│ 📘 STUDY ➤ BOLMUNAH
+│ 💞 STATUS ➤ PURE SINGLE
+│ 🧑‍🎓 WORK ➤ JOB
 ╰────────────────╯
-╭〔 🧬 ‿𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐋 〕╮
-│ 👪 ‿Explicit ➤ 𝐎𝐍𝐋𝐘 𝐒𝐎𝐍 😎
-│ 💞 ‿𝐆𝐅 ➤ 𝐘𝐄𝐒 (𝐍𝐀𝐊𝐀𝐌𝐎 😏)
+
+╭〔 📍 LOCATION 〕╮
+│ 🏠 DISTRICT ➤ BRAMMONBARIA
+│ 🌍 COUNTRY ➤ BANGLADESH
 ╰────────────────╯
-╭─〔 🎯 ‿𝐇𝐎𝐁𝐁𝐘 〕─╮
-│ 🔥 ➤ 𝐅𝐑𝐈𝐄𝐍𝐃𝐒 𝐀𝐃𝐃𝐃𝐀
-│ 🏍️ ➤ 𝐁𝐈𝐊𝐄 𝐑𝐈𝐃𝐄 | 📱 ➤ 𝐌𝐎𝐁𝐈𝐋𝐄 𝐔𝐒𝐄
+
+╭〔 🎯 HOBBY 〕╮
+│ 🎮 ➤ GAMING
 ╰────────────────╯
-╭─〔 💋 ‿𝐒𝐏𝐄𝐂𝐈𝐀𝐋 〕─╮
-│ 😘 ➤ 𝐆𝐈𝐑𝐋𝐒 = 𝐔𝐌𝐌𝐀𝐇
+
+╭─〔 🌐 CONTACT 〕─╮
+│ 📞 WHATSAPP ➤ 01937278213
+│ 🎵 TIKTOK ➤ @nirob__diary
+│ ✈️ TELEGRAM ➤ @Its_Ariyan_x
+│ 🔗 FACEBOOK ➤ https://www.facebook.com/ItsAriyanSabbir
 ╰────────────────╯
-╭─〔 🌐 ‿𝐂𝐎𝐍𝐓𝐀𝐂𝐓 〕─╮
-│ 🌐 ‿𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊 ➤ https://www.facebook.com/profile.php?id=61591371186179
-│ 📞 ‿𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 ➤ +8801789138157
+
+╭〔 ⏳ SYSTEM 〕╮
+│ 🕒 TIME ➤ ${time}
+│ 📅 DATE ➤ ${date}
+│ ⏱️ UPTIME ➤ ${h}h ${m}m ${s}s
 ╰────────────────╯
-╭〔 ⏳ ‿𝐒𝐘𝐒𝐓𝐄𝐌 〕╮
-│ 🕒 ‿𝐓𝐈𝐌𝐄 ➤ ${time}
-│ 📅 ‿𝐃𝐀𝐓𝐄 ➤ ${date}
-│ ⏱️ ‿𝐔𝐏𝐓𝐈𝐌𝐄 ➤ ${h}𝐡 ${m}𝐦 ${s}𝐬
-╰────────────────╯
+
 ╔════════════════╗
-   ✡️ ‿𝐀𝐓𝐓𝐈𝐓𝐔𝐃𝐄 ✡️
+      ✨ ATTITUDE ✨
 ╚════════════════╝
-➤ 😎 আমি নিজের মতোই চলি
-➤ 🔥 আমি কপি না, আমি আলাদা
-➤ 🖤 যারে ভালোবাসি, শেষ পর্যন্ত
-➤ 💖 যারে না চাই, সে নাই
-╭─〔 🔥 ‿𝐁𝐑𝐀𝐍𝐃 〕─╮
-│ 👑 ‿𝐒𝐈𝐘𝐀𝐌 𝐇𝐀𝐒𝐀𝐍
-│ ❌ ‿𝐍𝐎 𝐂𝐎𝐏𝐘 | ✔️ ‿𝐎𝐍𝐋𝐘 𝐎𝐑𝐈𝐆𝐈𝐍𝐀𝐋
+➤ 😎 নিজের নিয়মে চলি
+➤ 🔥 কপি না, অরিজিনাল
+➤ 🖤 সম্মান দিলে সম্মান পাবা
+➤ 💯 Real Life, Real Vibes
+
+╭─〔 🔥 BRAND 〕─╮
+│ 👑 ARIYAN SABBIR
+│ ✔️ ONLY ORIGINAL
 ╰────────────────╯`,
+  
       attachment: attachment
     });
   }
