@@ -31,7 +31,7 @@ module.exports = {
     const uptimeString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
     const prefix = global.utils.getPrefix(event.threadID);
-    const groupName = event.threadName || "বলবো না 😁 সিয়াম বস কে প্রেম করাই দাও নাই😴";
+    const groupName = event.threadName || "বলবো না 😁 বস আরিয়ান কে প্রেম করাই দাও নাই😴";
 
     let botName = "Unknown Bot";
     try {
@@ -42,8 +42,8 @@ module.exports = {
 
     
     const mediaFiles = [
-      "https://files.catbox.moe/8f2fc5.mp4",
-      "https://files.catbox.moe/3aikdw.mp4"
+      "https://files.catbox.moe/nd3nk5.mp4",
+      "https://files.catbox.moe/462c6q.webm"
     ];
 
     let attachment;
@@ -66,16 +66,16 @@ module.exports = {
     }
 
     return message.reply({
-      body: `  𝗢𝗪𝗡𝗘𝗥 𝗦𝗜𝗬𝗔𝗠-𝗛𝗔𝗦𝗔𝗡
+      body: `  𝗢𝗪𝐍𝐄𝐑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑
 ───────────────
 » 👑 𝗢𝗪𝗡𝗘𝗥: 𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
 » 🤖 𝗕𝗢𝗧 𝗡𝗔𝗠𝗘: ${botName}
-» 🎂 𝗔𝗚𝗘: 18 𝟏7+
+» 🎂 𝗔𝗚𝗘: 18+
 » 🚻 𝗚𝗘𝗡𝗗𝗘𝗥: 𝐌𝐀𝐋𝐄
 » ☪ 𝗥𝗘𝗟𝗜𝗚𝗜𝗢𝗡: 𝐈𝐒𝐋𝐀𝐌
 ───────────────
-» 🏠 𝗔𝗗𝗗𝗥𝗘𝗦𝗦: 𝐊𝐈𝐒𝐇𝐎𝐑𝐄𝐆𝐀𝐍𝐉 → 𝐁𝐀𝐍𝐆𝐋𝐀𝐃𝐄𝐒𝐇
-» 🏫 𝗦𝗖𝗛𝗢𝗢𝗟: 𝐌 𝐀 𝐌𝐀𝐍𝐍𝐀𝐍 𝐌𝐀𝐍𝐈𝐊 𝐇𝐈𝐆𝐇 𝐒𝐂𝐇𝐎𝐎𝐋
+» 🏠 𝗔𝗗𝗗𝗥𝗘𝗦𝗦: 𝐁𝐑𝐀𝐌𝐌𝐎𝐍𝐁𝐀𝐑𝐈𝐀 → 𝐁𝐀𝐍𝐆𝐋𝐀𝐃𝐄𝐒𝐇
+» 🏫 𝗦𝗖𝗛𝗢𝗢𝗟: 𝐁𝐀𝐍𝐂𝐇𝐀𝐑𝐀𝐌𝐏𝐔𝐑 𝐇𝐈𝐆𝐇 𝐒𝐂𝐇𝐎𝐎𝐋
 » 💔 𝗥𝗘𝗟𝗔𝗧𝗜𝗢𝗡𝗦𝗛𝗜𝗣: 𝐒𝐈𝐍𝐆𝐋𝐄
 » 🛠 𝗪𝗢𝗥𝗞: 𝐍𝐎𝐓 𝐖𝐎𝐑𝐊𝐈𝐍𝐆
 » 🕒 𝗧𝗜𝗠𝗘: ${time}
@@ -87,9 +87,9 @@ module.exports = {
 » 📦 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦: ${totalCommands}
 » ⏳ 𝗨𝗣𝗧𝗜𝗠𝗘: ${uptimeString}
 ───────────────
-» 🌐 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞: https://www.facebook.com/profile.php?id=61591371186179
-» 💬 𝗧𝗜𝗞𝗧𝗢𝗞: siyam0132525
-» 📞 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣: +8801789138157`,
+» 🌐 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞: https://www.facebook.com/ItsAriyanSabbir
+» 💬 𝗧𝗜𝗞𝗧𝗢𝗞: @nirob__diary
+» 📞 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣: 01937278213`,
       attachment: attachment
     });
   }
