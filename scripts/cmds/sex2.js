@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     name: "sex2",
-    aliases: ["18+"],
+    aliases: ["Iss"],
     version: "2.0",
     author: "kshitiz",
     countDown: 30,
