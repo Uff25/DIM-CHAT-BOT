@@ -15,8 +15,8 @@ async function safeStream(url) {
 // ================== 🎥/🖼️ MEDIA ROTATION SYSTEM ==================
 // এখানে আপনি ২টি ভিডিও, ২টি পিক, ২টি GIF অথবা ১টি পিক ও ১টি ভিডিও মিক্স করে বসাতে পারবেন
 const mediaLinks = [
-  "https://files.catbox.moe/lyppld.mp4",
-  "https://files.catbox.moe/4cct1h.jpg"
+  "https://files.catbox.moe/462c6q.webm",
+  "https://files.catbox.moe/nd3nk5.mp4"
 ];
 
 const countFile = path.join(__dirname, "owner_media_count.json");
@@ -72,23 +72,24 @@ module.exports = {
       body: `───────────────
 » 👑 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 👑
 ───────────────
-» 👤 𝗢𝗪𝗡𝗘𝗥 ➜ 𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍
-» 🏠 𝗔𝗗𝗗𝗥𝗘𝗦𝗦: 𝗞𝗜𝗦𝗛𝗢𝗥𝗘𝗚𝗔𝗡𝗝
-» 🕋 𝗥𝗘𝗟𝗜𝗚𝗜𝗢𝗡: 𝗜𝗦𝗟𝗔𝗠
-» 🚻 𝗚𝗘𝗡𝗗𝗘𝗥: 𝗠𝗔𝗟𝗘
-» 💞   𝗥𝗘𝗟𝗔𝗧𝗜𝗢𝗡𝗦𝗛𝗜𝗣: 𝗦𝗜𝗡𝗚𝗟𝗘
-» 🧑‍🎓 𝗪𝗢𝗥𝗞: 𝗦𝗧𝗨𝗗𝗘𝗡𝗧
+» 👤 𝗢𝗪𝗡𝗘𝗥 ➜ ARIYAN SABBIR
+» 🏠 𝗔𝗗𝗗𝗥𝗘𝗦𝗦: BRAHMANBARIA
+» 🕋 𝗥𝗘𝗟𝗜𝗚𝗜𝗢𝗡: ISLAM
+» 🚻 𝗚𝗘𝗡𝗗𝗘𝗥: MALE
+» 💞 𝗥𝗘𝗟𝗔𝗧𝗜𝗢𝗡𝗦𝗛𝗜𝗣: SINGLE
+» 🧑‍🎓 𝗪𝗢𝗥𝗞: STUDENT
 ───────────────
 » 📅 𝗗𝗮𝘁𝗲: ${date}
 » ⏰ 𝗧𝗶𝗺𝗲: ${time}
 ───────────────
-» 📞 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣: https://wa.me/+8801789138157
-» 🔗 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 𝟭: ${ownerFB1}
-» 🔗 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 𝟮: ${ownerFB2}
+» 📞 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣: 01937278213
+» 🎵 𝗧𝗜𝗞𝗧𝗢𝗞: @nirob__diary
+» ✈️ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠: @Its_Ariyan_x
+» 🔗 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞: https://www.facebook.com/ItsAriyanSabbir
 ───────────────
 » 📝 আরো দেখতে লিখুন: ,owner2
 ───────────────
-👑 𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥 ➜ 𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑`
+👑 𝗕𝗢𝗧 𝗡𝗔𝗠𝗘 ➜ ARIYAN CHAT BOT 👑`
     };
 
     if (attachment) {
