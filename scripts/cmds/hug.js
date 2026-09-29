@@ -72,12 +72,12 @@ async function makeImage({ one, two }) {
 }
 
 function stylishCaption(name) {
-  return `» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
+  return `» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑
 ───────────────
 » 🤗 ${name} তোমাকে 🥰
 » 😘 জড়িয়ে ধরে হাগ দিলাম
 ───────────────
-» 🧚‍♀️ ‿𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+» 🧚‍♀️ ‿𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
 }
 
 module.exports.run = async function ({ api, event }) {
@@ -86,12 +86,12 @@ module.exports.run = async function ({ api, event }) {
 
   if (mentionIDs.length === 0) {
     const noMentionMsg = 
-`» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
+`» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑
 ───────────────
 » 🥺 দয়া করে যাকে হাগ 
 » 🥵 দিতে চান মেনশন করুন!
 ───────────────
-» 🧚‍♀️ ‿𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+» 🧚‍♀️ ‿𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
     return api.sendMessage(noMentionMsg, threadID, messageID);
   }
 
@@ -116,12 +116,12 @@ module.exports.run = async function ({ api, event }) {
   } catch (err) {
     console.error(err);
     const errorMsg = 
-`» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑
+`» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑
 ───────────────
 » ❌ ছবিটি তৈরি করতে 
 » 🤧 সমস্যা হয়েছে। 
 ───────────────
-» 🧚‍♀️ ‿𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+» 🧚‍♀️ ‿𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
     return api.sendMessage(errorMsg, threadID, messageID);
   }
 };
