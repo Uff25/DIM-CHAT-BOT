@@ -333,7 +333,7 @@ module.exports = {
 
         api.sendMessage(
           {
-            body: "🫵তোর আব্বু👑𝆠፝𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑",
+            body: "🫵𝐁𝐎𝐓 𝐎𝐖𝐍𝐄𝐑👑𝆠፝𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑",
             attachment: fs.createReadStream(cachePath)
           },
           event.threadID,
