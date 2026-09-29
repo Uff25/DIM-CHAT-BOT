@@ -10,7 +10,7 @@ let categoryEmoji = null;
 
 const HELP_VIDEOS = [
     "https://files.catbox.moe/nd3nk5.mp4",
-    "https://files.catbox.moe/nd3nk5.mp4"
+    "https://files.catbox.moe/462c6q.webm"
 ];
 
 const videoCountFile = path.join(__dirname, "help_video_count.json");
