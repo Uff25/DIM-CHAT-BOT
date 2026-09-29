@@ -9,8 +9,8 @@ let yfont = null;
 let categoryEmoji = null;
 
 const HELP_VIDEOS = [
-    "YOUR_LINK_1",
-    "YOUR_LINK_2"
+    "https://files.catbox.moe/nd3nk5.mp4",
+    "https://files.catbox.moe/nd3nk5.mp4"
 ];
 
 const videoCountFile = path.join(__dirname, "help_video_count.json");
