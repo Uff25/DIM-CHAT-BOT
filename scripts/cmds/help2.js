@@ -9,8 +9,8 @@ let yfont = null;
 let categoryEmoji = null;
 
 const HELP_VIDEOS = [
-    "https://files.catbox.moe/4wkxxe.mp4",
-    "https://files.catbox.moe/0wx30s.mp4"
+    "YOUR_LINK_1",
+    "YOUR_LINK_2"
 ];
 
 const videoCountFile = path.join(__dirname, "help_video_count.json");
@@ -25,13 +25,16 @@ function getNextHelpVideo() {
     } catch (e) {
         console.log("Video count read error:", e.message);
     }
+
     const selectedVideo = HELP_VIDEOS[index];
     const nextIndex = (index + 1) % HELP_VIDEOS.length;
+
     try {
         fs.writeFileSync(videoCountFile, JSON.stringify({ index: nextIndex }));
     } catch (e) {
         console.log("Video count write error:", e.message);
     }
+
     return selectedVideo;
 }
 
@@ -42,10 +45,12 @@ async function loadResources() {
             axios.get("https://raw.githubusercontent.com/Saim-x69x/sakura/main/yfont.json"),
             axios.get("https://raw.githubusercontent.com/Saim-x69x/sakura/main/category.json")
         ]);
+
         xfont = x.data;
         yfont = y.data;
         categoryEmoji = c.data;
-    } catch (e) {
+    }
+    catch (e) {
         console.error("[HELP] Resource load failed", e);
         xfont = {};
         yfont = {};
@@ -74,27 +79,41 @@ function getCategoryEmoji(cat) {
 }
 
 function roleText(role) {
-    const roles = { 0: "All Users", 1: "Group Admins", 2: "Bot Admin" };
+    const roles = {
+        0: "All Users",
+        1: "Group Admins",
+        2: "Bot Admin"
+    };
     return roles[role] || "Unknown";
-}
-
-function parseText(input) {
+}function parseText(input) {
     if (!input) return "No description";
-    if (typeof input === "string") return input;
+
+    if (typeof input === "string")
+        return input;
+
     if (typeof input === "object") {
         return input.en || input.vi || Object.values(input)[0] || "No description";
     }
+
     return String(input);
 }
 
 function findCommand(name) {
     name = name.toLowerCase();
+
     for (const [, cmd] of commands) {
         const a = cmd.config?.aliases;
-        if (cmd.config?.name === name) return cmd;
-        if (Array.isArray(a) && a.includes(name)) return cmd;
-        if (typeof a === "string" && a === name) return cmd;
+
+        if (cmd.config?.name === name)
+            return cmd;
+
+        if (Array.isArray(a) && a.includes(name))
+            return cmd;
+
+        if (typeof a === "string" && a === name)
+            return cmd;
     }
+
     return null;
 }
 
@@ -103,85 +122,122 @@ module.exports = {
         name: "help2",
         aliases: ["menu"],
         version: "3.2",
-        author: "𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍",
+        author: "ARIYAN SABBIR",
         role: 0,
         category: "info",
-        shortDescription: "Show all commands with video and premium style",
+        shortDescription: "Show all commands with premium style",
         guide: "{pn} | {pn} <command> | {pn} -c <category>"
     },
 
     onStart: async function ({ message, args, event, role }) {
-        if (!xfont || !yfont || !categoryEmoji) await loadResources();
+
+        if (!xfont || !yfont || !categoryEmoji)
+            await loadResources();
 
         const prefix = getPrefix(event.threadID);
         const input = args.join(" ").trim();
         const HELP_GIF = getNextHelpVideo();
 
         const categories = {};
+
         for (const [name, cmd] of commands) {
-            if (!cmd?.config || cmd.config.role > role) continue;
+            if (!cmd?.config || cmd.config.role > role)
+                continue;
+
             const cat = (cmd.config.category || "UNCATEGORIZED").toUpperCase();
-            if (!categories[cat]) categories[cat] = [];
+
+            if (!categories[cat])
+                categories[cat] = [];
+
             categories[cat].push(name);
         }
 
         if (args[0] === "-c" && args[1]) {
-            const cat = args[1].toUpperCase();
-            if (!categories[cat]) return message.reply(`» ⚠️ Category "${cat}" not found!`);
 
-            let msg = `» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n`;
+            const cat = args[1].toUpperCase();
+
+            if (!categories[cat])
+                return message.reply(`» ⚠️ Category "${cat}" not found!`);
+
+            let msg = `» 👑 ARIYAN SABBIR 👑\n`;
             msg += `───────────────\n`;
             msg += `» ${getCategoryEmoji(cat)} 𝐒𝐄𝐂𝐓𝐈𝐎𝐍: ${boldFont(cat)}\n`;
             msg += `───────────────\n\n`;
+
             for (const c of categories[cat].sort()) {
                 msg += `» ✦ ${fontConvert(c)}\n`;
             }
+
             msg += `\n───────────────\n`;
             msg += `» 📊 ${boldFont("Total")}: [ ${boldFont(String(categories[cat].length))} ]\n`;
             msg += `» 👑 ${boldFont("Prefix")}: [ ${prefix} ]\n`;
             msg += `───────────────\n`;
-            msg += `» 🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+            msg += `» 🤖 ARIYAN CHAT BOT\n`;
 
-            return message.reply({ body: msg, attachment: await getStreamFromURL(HELP_GIF) });
+            return message.reply({
+                body: msg,
+                attachment: await getStreamFromURL(HELP_GIF)
+            });
         }
 
         if (!input) {
-            let msg = `» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n`;
+
+            let msg = `» 👑 ARIYAN SABBIR 👑\n`;
             msg += `───────────────\n\n`;
 
             for (const cat of Object.keys(categories).sort()) {
                 msg += `» ◈ ${getCategoryEmoji(cat)} ━ 『 ${boldFont(cat)} 』\n`;
+
                 for (const c of categories[cat].sort()) {
                     msg += `»   👑 ${fontConvert(c)}\n`;
                 }
+
                 msg += `───────────────\n`;
             }
-            const total = Object.values(categories).reduce((a, b) => a + b.length, 0);
 
-            msg += `» 📊 ⊱ ${boldFont("Total Commands")}: [ ${total} ]\n`;
-            msg += `» 👑 ⊱ ${boldFont("Find Info")}: [ ${prefix}\n`;
-            msg += `» 🔗 ⊱ ${boldFont("Facebook")}: https://www.facebook.com/share/1LDy7c49aK/\n`;
+            const total = Object.values(categories)
+                .reduce((a, b) => a + b.length, 0);msg += `» 📊 ⊱ ${boldFont("Total Commands")}: [ ${total} ]\n`;
+            msg += `» 👑 ⊱ ${boldFont("Find Info")}: [ ${prefix}help2 <cmd> ]\n`;
+            msg += `» 🔗 ⊱ ${boldFont("Facebook")}: https://www.facebook.com/ItsAriyanSabbir\n`;
+            msg += `» 🎵 ⊱ ${boldFont("TikTok")}: @nirob__diary\n`;
+            msg += `» ✈️ ⊱ ${boldFont("Telegram")}: @Its_Ariyan_x\n`;
+            msg += `» 📞 ⊱ ${boldFont("WhatsApp")}: 01937278213\n`;
             msg += `───────────────\n`;
-            msg += `» 🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+            msg += `» 🤖 ARIYAN CHAT BOT`;
 
-            return message.reply({ body: msg, attachment: await getStreamFromURL(HELP_GIF) });
+            return message.reply({
+                body: msg,
+                attachment: await getStreamFromURL(HELP_GIF)
+            });
         }
 
         const cmd = findCommand(input);
-        if (!cmd) return message.reply(`» ⚠️ Command "${input}" not found!`);
+
+        if (!cmd)
+            return message.reply(`» ⚠️ Command "${input}" not found!`);
 
         const c = cmd.config;
-        const aliasText = Array.isArray(c.aliases) ? c.aliases.join(", ") : c.aliases || "None";
+
+        const aliasText = Array.isArray(c.aliases)
+            ? c.aliases.join(", ")
+            : c.aliases || "None";
+
         let usage = "No usage";
+
         if (c.guide) {
-            if (typeof c.guide === "string") usage = c.guide;
-            else if (typeof c.guide === "object") usage = c.guide.en || Object.values(c.guide)[0] || "No usage";
+            if (typeof c.guide === "string")
+                usage = c.guide;
+            else if (typeof c.guide === "object")
+                usage = c.guide.en || Object.values(c.guide)[0] || "No usage";
+
             usage = usage.replace(/{pn}/g, `${prefix}${c.name}`);
         }
 
-        const descriptionText = parseText(c.shortDescription || c.description);
+        const descriptionText = parseText(
+            c.shortDescription || c.description
+        );
 
-        let infoMsg = `» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n`;
+        let infoMsg = `» 👑 ARIYAN SABBIR 👑\n`;
         infoMsg += `───────────────\n`;
         infoMsg += `» 👑 ${boldFont("COMMAND DETAILS")}\n`;
         infoMsg += `───────────────\n`;
@@ -192,8 +248,11 @@ module.exports = {
         infoMsg += `» 📝 ${boldFont("Description")} ↬ ${descriptionText}\n`;
         infoMsg += `» 📖 ${boldFont("Usage")} ↬ ${usage}\n`;
         infoMsg += `───────────────\n`;
-        infoMsg += `» 🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`;
+        infoMsg += `» 🤖 ARIYAN CHAT BOT`;
 
-        return message.reply({ body: infoMsg, attachment: await getStreamFromURL(HELP_GIF) });
+        return message.reply({
+            body: infoMsg,
+            attachment: await getStreamFromURL(HELP_GIF)
+        });
     }
 };
