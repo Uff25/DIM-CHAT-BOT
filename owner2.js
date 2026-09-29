@@ -40,7 +40,7 @@ module.exports = {
       encoder.setQuality(10);
 
       // PROFILE IMAGE
-      const profile = await loadImage("https://i.imgur.com/3j6kz0F.jpeg");
+      const profile = await loadImage("https://i.imgur.com/W4lBm3J.jpeg");
 
       // COLORS
       const ledColors = [
@@ -130,7 +130,7 @@ module.exports = {
         // TITLE
         ctx.fillStyle = "#ffffff";
         ctx.font = "bold 30px Sans";
-        ctx.fillText("👑 UDAY HASAN SIYAM🪯", 55, 100);
+        ctx.fillText("👑 ARIYAN SABBIR🪯", 55, 100);
 
         // INFO BOX
         ctx.fillStyle = "#0d0d0d";
@@ -145,7 +145,7 @@ module.exports = {
           ["🕌 RELIGION", "ISLAM", "#00ff88"],
           ["🎂 AGE", "17+", "#ff66cc"],
           ["🚹 GENDER", "MALE", "#00bfff"],
-          ["🏠 ADDRESS", "KISHOREGANJ", "#ffaa00"],
+          ["🏠 ADDRESS", "BRAMMONBARIA", "#ffaa00"],
           ["🌍 COUNTRY", "BANGLADESH", "#00ffff"],
           ["💔 STATUS", "SINGLE", "#ff3333"],
           ["🧑‍🎓 WORK", "STUDENT", "#bb66ff"]
@@ -229,11 +229,11 @@ module.exports = {
         // BOT NAME
         ctx.fillStyle = "#ffd700";
         ctx.font = "bold 38px Sans";
-        ctx.fillText("👑𝆠፝ 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑", 390, 660);
+        ctx.fillText("👑𝆠፝ 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑", 390, 660);
 
         ctx.fillStyle = "#ffffff";
         ctx.font = "bold 30px Sans";
-        ctx.fillText("👑 𝐍𝐈𝐉𝐇𝐔𝐌 𝐁𝐎𝐓 👑", 430, 715);
+        ctx.fillText("👑 𝐀𝐑𝐈𝐘𝐀𝐍 𝐁𝐎𝐓 👑", 430, 715);
 
         // SMALL STATUS BOXES
         const boxY = 790;
@@ -333,7 +333,7 @@ module.exports = {
 
         api.sendMessage(
           {
-            body: "🫵তোর আব্বু👑𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑",
+            body: "🫵তোর আব্বু👑𝆠፝𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑",
             attachment: fs.createReadStream(cachePath)
           },
           event.threadID,
