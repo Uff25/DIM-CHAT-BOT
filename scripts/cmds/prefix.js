@@ -4,8 +4,8 @@ const moment = require("moment-timezone");
 const getStreamFromURL = global.utils.getStreamFromURL;
 
 const mediaList = [
-  "https://tmpfiles.org/dl/wdwFibqdw8im/catbox_1785488054781.gif",
-  "https://tmpfiles.org/dl/wCwXisPFpvOc/catbox_1785488006710.gif"
+  "https://i.imgur.com/W4lBm3J.jpeg",
+  "https://i.imgur.com/W4lBm3J.jpeg"
 ];
 
 global.GoatBot.prefixVideoToggle = global.GoatBot.prefixVideoToggle || {};
@@ -117,7 +117,7 @@ module.exports = {
     const time = moment().tz("Asia/Dhaka").format("hh:mm A");
     const date = moment().tz("Asia/Dhaka").format("DD MMM YYYY");
 
-    const owner = "𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍";
+    const owner = "𝆠፝𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑";
     
     const totalCommands = global.GoatBot.commands ? global.GoatBot.commands.size : 0;
 
@@ -131,7 +131,7 @@ module.exports = {
 📊 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ➜ ${totalCommands}
 🚀 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 ➜ 𝐕𝟐 • 𝐕𝟑 • 𝐕𝟓
 ⚡ 𝐒𝐓𝐀𝐓𝐔𝐒 ➜ 𝐎𝐍𝐋𝐈𝐍𝐄
-〔 💎𝐍𝐈𝐉𝐇𝐔𝐌 𝐁𝐎𝐓💎 〕`;
+〔 💎𝐀𝐑𝐈𝐘𝐀𝐍 𝐂𝐇𝐀𝐓-𝐁𝐎𝐓💎 〕`;
 
     const design2 = `◢◤◢◤◢◤◢◤◢◤◢◤◢◤
 🔥 𝐏𝐑𝐄𝐅𝐈𝐗 𝐏𝐀𝐍𝐄𝐋 🔥
@@ -144,7 +144,7 @@ module.exports = {
 ➥ 📊 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 :: ${totalCommands}
 ➥ 🚀 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 :: 𝐕𝟐 • 𝐕𝟑 • 𝐕𝟓
 ➥ ⚡ 𝐒𝐓𝐀𝐓𝐔𝐒 :: 𝐎𝐍𝐋𝐈𝐍𝐄
-💎𝐒𝐈𝐘𝐀𝐌 𝐄𝐌𝐏𝐈𝐑𝐄💎`;
+💎𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑💎`;
 
     return message.reply({
       body: index === 0 ? design1 : design2,
