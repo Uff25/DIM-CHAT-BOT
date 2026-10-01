@@ -41,7 +41,7 @@ module.exports = {
       try {
         await api.unsendMessage(messageID);
         return api.sendMessage(
-          "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n───────────────\n» ⚠️ 𝗖𝗔𝗡𝗖𝗘𝗟𝗟𝗘𝗗\n» ❌ অপারেশনটি বাতিল করা হয়েছে!\n───────────────\n» 🧚‍♀️𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
+          "» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑\n───────────────\n» ⚠️ 𝗖𝗔𝗡𝗖𝗘𝗟𝗟𝗘𝗗\n» ❌ অপারেশনটি বাতিল করা হয়েছে!\n───────────────\n» 🧚‍♀️𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
           threadID
         );
       } catch {
@@ -56,7 +56,7 @@ module.exports = {
 
     if (indexes.length === 0) {
       return api.sendMessage(
-        "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝗔𝗡 👑\n───────────────\n» ⚠️ 𝗜𝗡𝗩𝗔𝗟𝗜𝗗\n» ❌ সঠিক সংখ্যা নির্বাচন করুন!\n───────────────\n» 🧚‍♀️𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
+        "» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑\n───────────────\n» ⚠️ 𝗜𝗡𝗩𝗔𝗟𝗜𝗗\n» ❌ সঠিক সংখ্যা নির্বাচন করুন!\n───────────────\n» 🧚‍♀️𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
         threadID
       );
     }
@@ -77,7 +77,7 @@ module.exports = {
 
         await api.sendMessage(msgPayload, group.threadID);
 
-        const botNickname = global.GoatBot?.config?.nickNameBot || "[ , ] 𝘽𝙤𝙩 - 𝐀𝐩𝐡𝐞𝐥𝐢𝐨𝐧🌊🪶";
+        const botNickname = global.GoatB𝐇𝐀?.nickNameBot || "[ , ] 𝘽𝙤𝙩 - 𝐀𝐩𝐡𝐞𝐥𝐢𝐨𝐧🌊🪶";
 
         await api.changeNickname(
           botNickname,
@@ -93,7 +93,7 @@ module.exports = {
 
     await api.unsendMessage(messageID);
     return api.sendMessage(
-      `» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n───────────────\n» ✅ 𝗦𝗨𝗖𝗖𝗘𝗦𝗦\n» 🎉 সফলভাবে ${count} টি গ্রুপ/ইউজার এপ্রুভ করা হয়েছে!\n───────────────\n» 🧚‍♀️𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`,
+      `» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑\n───────────────\n» ✅ 𝗦𝗨𝗖𝗖𝗘𝗦𝗦\n» 🎉 সফলভাবে ${count} টি গ্রুপ/ইউজার এপ্রুভ করা হয়েছে!\n───────────────\n» 🧚‍♀️𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧`,
       threadID
     );
   },
@@ -104,7 +104,7 @@ module.exports = {
     const type = args[0]?.toLowerCase();
     if (!type || !["user", "thread", "all"].includes(type)) {
       return api.sendMessage(
-        "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n───────────────\n» ⚠️ 𝗨𝗦𝗔𝗚𝗘\n» 📌 ব্যবহারবিধি: pending [user/thread/all]\n───────────────\n» 🧚‍♀️𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
+        "» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑\n───────────────\n» ⚠️ 𝗨𝗦𝗔𝗚𝗘\n» 📌 ব্যবহারবিধি: pending [user/thread/all]\n───────────────\n» 🧚‍♀️𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
         threadID
       );
     }
@@ -121,7 +121,7 @@ module.exports = {
 
       if (filteredList.length === 0) {
         return api.sendMessage(
-          "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n───────────────\n» 📑 𝗣𝗘𝗡𝗗𝗜𝗡𝗚 𝗟𝗜𝗦𝗧\n» ✅ কোনো পেন্ডিং রিকোয়েস্ট পাওয়া যায়নি!\n───────────────\n» 🧚‍♀️𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
+          "» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑\n───────────────\n» 📑 𝗣𝗘𝗡𝗗𝗜𝗡𝗚 𝗟𝗜𝗦𝗧\n» ✅ কোনো পেন্ডিং রিকোয়েস্ট পাওয়া যায়নি!\n───────────────\n» 🧚‍♀️𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
           threadID
         );
       }
@@ -162,7 +162,7 @@ module.exports = {
     } catch (error) {
       console.error("Pending fetch error:", error);
       return api.sendMessage(
-        "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑\n───────────────\n» ⚠️ 𝗘𝗥𝗥𝗢𝗥\n» ❌ পেন্ডিং লিস্ট আনতে সমস্যা হয়েছে!\n───────────────\n» 🧚‍♀️𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
+        "» 👑 𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑 👑\n───────────────\n» ⚠️ 𝗘𝗥𝗥𝗢𝗥\n» ❌ পেন্ডিং লিস্ট আনতে সমস্যা হয়েছে!\n───────────────\n» 🧚‍♀️𝐀𝐑𝐈𝐘𝐀𝐍 𝗖𝗛𝗔𝗧𝗕𝗢𝗧",
         threadID
       );
     }
