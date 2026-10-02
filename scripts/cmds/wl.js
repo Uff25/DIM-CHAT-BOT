@@ -133,7 +133,7 @@ module.exports = {
 📅  𝆠፝𝐃𝐚𝐭𝐞 : ${date}
 ⏰  𝆠፝𝐓𝐢𝐦𝐞 : ${time}
 
-👑  𝆠፝𝐍𝐈𝐉𝐇𝐔𝐌 𝐂𝐇𝐀𝐓 𝐁𝐎𝐓  👑
+👑  𝆠𝐀𝐑𝐈𝐘𝐀𝐍 𝐂𝐇𝐀𝐓𝐁𝐎𝐓  👑
 `;
 
 				return message.reply(msg);
@@ -148,7 +148,7 @@ module.exports = {
 				const date = moment().tz("Asia/Dhaka").format("DD MMMM YYYY");
 
 				const msg = `
-👑  𝆠፝𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍  👑
+👑  𝐀𝐑𝐈𝐘𝐀𝐍-𝐒𝐀𝐁𝐁𝐈𝐑𝆠  👑
 
 𝆠፝𝐖𝐇𝐈𝐓𝐄 𝐋𝐈𝐒𝐓 𝐌𝐎𝐃𝐄 𝐃𝐈𝐒𝐀𝐁𝐋𝐄𝐃
 
@@ -159,7 +159,7 @@ module.exports = {
 📅  𝆠፝𝐃𝐚𝐭𝐞 : ${date}
 ⏰  𝆠፝𝐓𝐢𝐦𝐞 : ${time}
 
-👑  𝆠፝𝐍𝐈𝐉𝐇𝐔𝐌 𝐂𝐇𝐀𝐓 𝐁𝐎𝐓  👑
+👑  𝆠𝐀𝐑𝐈𝐘𝐀𝐍 𝐂𝐇𝐀𝐓𝐁𝐎𝐓  👑
 `;
 
 				return message.reply(msg);
